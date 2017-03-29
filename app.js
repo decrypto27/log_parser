@@ -39,7 +39,7 @@ app.post('/ping',         function (req, res) {
 //                          Server configuration                      //
 ////////////////////////////////////////////////////////////////////////
 
-var httpServer = http.createServer(app).listen(config.get('httpPort'), function() {
+var httpServer = http.createServer(app).listen(process.env.PORT || config.get('httpPort'), function() {
     console.log('Express HTTP server listening on port ' + config.get('httpPort'));
 });
 
